@@ -1,780 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AKT Enterprise – A Composite Solutions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0a1f44;
+  --navy2:#112757;
+  --orange:#f4813f;
+  --orange2:#e06b28;
+  --light:#f5f7fa;
+  --white:#fff;
+  --text:#2c3e50;
+}
+body{font-family:'Segoe UI',sans-serif;color:var(--text);background:var(--white);}
+a{text-decoration:none;color:inherit;}
 
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+/* NAV */
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 2px 12px rgba(0,0,0,.4);}
+.nav-brand{display:flex;align-items:center;gap:12px;padding:14px 0;}
+.nav-logo-circle{width:46px;height:46px;background:linear-gradient(135deg,#1a6bbf,#0a3a7a);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#fff;letter-spacing:-1px;border:2px solid var(--orange);}
+.nav-brand-text{line-height:1.1;}
+.nav-brand-text span{display:block;font-size:18px;font-weight:800;color:#fff;letter-spacing:1px;}
+.nav-brand-text small{font-size:10px;color:var(--orange);letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:#cdd8f0;font-size:13px;font-weight:500;letter-spacing:.5px;padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+.nav-links a:hover{color:var(--orange);border-color:var(--orange);}
+.nav-cta{background:var(--orange);color:#fff!important;padding:8px 20px!important;border-radius:4px;border:none!important;font-weight:700!important;transition:background .2s!important;}
+.nav-cta:hover{background:var(--orange2)!important;}
 
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3a6b 60%,#0d2e5a 100%);min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 5%;}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80') center/cover;opacity:.12;}
+.hero-badge{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:3px;margin-bottom:18px;}
+.hero h1{font-size:clamp(2rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.15;max-width:680px;margin-bottom:16px;}
+.hero h1 span{color:var(--orange);}
+.hero p{color:#a8c0e0;font-size:1.1rem;max-width:560px;line-height:1.7;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--orange);color:#fff;padding:14px 32px;border-radius:5px;font-weight:700;font-size:15px;transition:.2s;display:inline-block;}
+.btn-primary:hover{background:var(--orange2);transform:translateY(-1px);}
+.btn-outline{border:2px solid rgba(255,255,255,.4);color:#fff;padding:14px 32px;border-radius:5px;font-weight:600;font-size:15px;transition:.2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange);}
+.hero-stats{position:absolute;right:5%;bottom:40px;display:flex;gap:32px;}
+.stat{text-align:center;}
+.stat-num{display:block;font-size:2.2rem;font-weight:900;color:var(--orange);}
+.stat-label{font-size:11px;color:#7a9bc5;letter-spacing:1px;text-transform:uppercase;}
 
-    <!-- Site Metas -->
-    <title>Aarvee Balloons Decoration : Jinesh Patel Canada</title>
-    <meta name="keywords" content="Balloon decorations Canada,Event balloons Canada,Party balloons Canada,Custom balloon designs Canada,Balloon arches Canada,Balloon sculptures Canada,Birthday balloons Canada,Wedding balloons Canada,Corporate event balloons Canada">
-    <meta name="description" content="Transform your events into unforgettable experiences with our exquisite balloon decorations in Canada. From enchanting balloon arches to stunning sculptures, we specialize in custom designs for weddings, birthdays, corporate events, and more. With prompt delivery and impeccable craftsmanship, we're your premier choice for balloon decor in Canada. Let us elevate your celebrations with our creativity and attention to detail. Contact us today!">
-    <meta name="author" content="Aarvee Balloons Decoration Jinesh Patel Canada">
+/* ABOUT FRP */
+.about-frp{background:var(--navy);padding:80px 5%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-frp img{width:100%;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.4);}
+.about-frp-text h2{font-size:2.4rem;font-weight:900;color:#fff;margin-bottom:8px;}
+.about-frp-text h2 span{color:var(--orange);}
+.about-frp-text .divider{width:60px;height:3px;background:var(--orange);margin:14px 0 20px;}
+.about-frp-text p{color:#8aaed4;line-height:1.8;margin-bottom:14px;font-size:.98rem;}
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+/* SECTION HEADER */
+.sec-header{text-align:center;padding:70px 5% 40px;}
+.sec-header h2{font-size:2.2rem;font-weight:900;color:var(--navy);margin-bottom:10px;}
+.sec-header h2 span{color:var(--orange);}
+.sec-header p{color:#6b7d96;max-width:580px;margin:0 auto;line-height:1.7;}
+.divider-center{width:60px;height:3px;background:var(--orange);margin:14px auto 18px;}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- color -->
-    <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+/* PRODUCTS */
+.products{background:var(--light);padding:0 5% 80px;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;}
+.product-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 18px rgba(10,31,68,.08);transition:.3s;border-top:4px solid var(--orange);}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(10,31,68,.15);}
+.card-img{height:220px;object-fit:cover;width:100%;display:block;}
+.card-img-placeholder{height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.card-body{padding:22px 24px 28px;}
+.card-tag{display:inline-block;background:rgba(244,129,63,.12);color:var(--orange);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:10px;}
+.card-body h3{font-size:1.25rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.card-body p{color:#6b7d96;font-size:.9rem;line-height:1.7;margin-bottom:16px;}
+.card-features{list-style:none;margin-bottom:18px;}
+.card-features li{font-size:.83rem;color:var(--navy);padding:3px 0;padding-left:16px;position:relative;}
+.card-features li::before{content:'✦';position:absolute;left:0;color:var(--orange);font-size:9px;top:5px;}
+.btn-card{display:inline-block;background:var(--navy);color:#fff;padding:9px 22px;border-radius:4px;font-size:.85rem;font-weight:700;letter-spacing:.5px;transition:.2s;}
+.btn-card:hover{background:var(--orange);}
 
-    <!-- Modernizer -->
-    <script src="js/modernizer.js"></script>
+/* INDUSTRIES */
+.industries{background:var(--navy);padding:70px 5%;}
+.industries h2{text-align:center;font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;}
+.industries h2 span{color:var(--orange);}
+.industries .divider-center{margin-bottom:40px;}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;max-width:900px;margin:0 auto;}
+.ind-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px 16px;text-align:center;transition:.2s;}
+.ind-item:hover{background:rgba(244,129,63,.15);border-color:var(--orange);}
+.ind-icon{font-size:2rem;margin-bottom:10px;}
+.ind-item span{display:block;color:#a8c0e0;font-size:.85rem;font-weight:600;}
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+/* WHY FRP */
+.why-frp{padding:80px 5%;background:var(--white);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:10px;}
+.why-card{background:var(--light);border-radius:8px;padding:28px 22px;border-left:4px solid var(--orange);transition:.2s;}
+.why-card:hover{box-shadow:0 6px 24px rgba(10,31,68,.1);}
+.why-card h4{color:var(--navy);font-size:1rem;font-weight:800;margin-bottom:8px;}
+.why-card p{color:#6b7d96;font-size:.87rem;line-height:1.6;}
 
+/* VISION MISSION */
+.vm{background:var(--light);padding:80px 5%;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.vm-box{background:var(--white);border-radius:10px;padding:36px 32px;box-shadow:0 4px 18px rgba(10,31,68,.07);}
+.vm-box.mission{background:var(--navy);}
+.vm-label{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;padding:5px 12px;border-radius:3px;margin-bottom:14px;}
+.vm-box h3{font-size:1.6rem;font-weight:900;color:var(--navy);margin-bottom:12px;}
+.vm-box.mission h3{color:#fff;}
+.vm-box p{color:#6b7d96;line-height:1.8;font-size:.95rem;}
+.vm-box.mission p{color:#8aaed4;}
+
+/* CONTACT */
+.contact{background:linear-gradient(135deg,var(--navy),#1a3a6b);padding:80px 5%;text-align:center;}
+.contact h2{font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:10px;}
+.contact h2 span{color:var(--orange);}
+.contact p{color:#8aaed4;margin-bottom:36px;font-size:1rem;}
+.contact-cards{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.contact-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:24px 32px;min-width:200px;text-align:center;}
+.contact-card .cc-icon{font-size:2rem;margin-bottom:8px;}
+.contact-card h4{color:var(--orange);font-size:.85rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.contact-card p{color:#c5d5e8;font-size:.9rem;line-height:1.5;}
+
+/* FOOTER */
+footer{background:#060f22;padding:28px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;}
+footer p{color:#4a6080;font-size:.85rem;}
+footer span{color:var(--orange);font-weight:700;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero{padding:60px 5% 80px;}
+  .hero-stats{position:static;margin-top:40px;justify-content:flex-start;}
+  .about-frp{grid-template-columns:1fr;}
+  .vm{grid-template-columns:1fr;}
+}
+</style>
 </head>
-
 <body>
-    <div id="loader">
-        <div id="status"></div>
-    </div>
-    <div id="site-header">
-        <header id="header" class="header-block-top">
-            <div class="container">
-                <div class="row">
-                    <div class="main-menu">
-                        <!-- navbar -->
-                        <nav class="navbar navbar-default" id="mainNav">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <div class="logo">
-                                    <a class="navbar-brand js-scroll-trigger logo-header" href="#">
-                                        <img src="images/logo.png" width="150px" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="navbar" class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a href="#banner">Home</a></li>
-                                    <li><a href="#service">Our Services</a></li>
-                                    <li><a href="#our_team">Testimonials</a></li>
-                                    <li><a href="#about">About Us</a></li>
-                                    <li><a href="#gallery">Gallery</a></li>
-                                    <li><a href="#reservation">Inquery</a></li>
-                                    <li><a href="#footer">Contact us</a></li>
-                                </ul>
-                            </div>
-                            <!-- end nav-collapse -->
-                        </nav>
-                        <!-- end navbar -->
-                    </div>
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container-fluid -->
-        </header>
-        <!-- end header -->
-    </div>
-	<!-- end site-header -->
-	
-    <div id="banner" class="banner full-screen-mode parallax">
-        <div class="container pr">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="banner-static">
-                    <div class="banner-text">
-                        <div class="banner-cell">
-                            <h1>Celebrate with us  <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Birthday:Baby Shower:Anniversary" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
-                            <h2>Your Suggestions Our Efforts</h2>
-                            <p></p>
-                            <div class="book-btn">
-                                <a href="#reservation" class="table-btn hvr-underline-from-center">Book your Order</a>
-                            </div>
-                            <a href="#about">
-                                <div class="mouse"></div>
-                            </a>
-                        </div>
-                        <!-- end banner-cell -->
-                    </div>
-                    <!-- end banner-text -->
-                </div>
-                <!-- end banner-static -->
-            </div>
-            <!-- end col -->
-        </div>
-        <!-- end container -->
-    </div>
-    <!-- end banner -->
 
-    <div id="service" class="about-main pad-top-100 pad-bottom-100">
-    	
-        <div class="container">
-             <div class="team-box">
- 						<h2 class="block-title color-white text-center"> Our Services </h2>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="thumb">
-                                        <a href="#"><img src="images/staff-01.jpg" height="500px" alt=""></a>
-                                    </div>
-                                    <div class="text-col">
-                                        <h3>Birthday Parties</h3>
-                                                                          
-                                    </div>
-                                </div>
-                            </div>   
-                          <div class="col-md-4 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="thumb">
-                                        <a href="#"><img src="images/IMG_4598.JPG" height="500px" alt=""></a>
-                                    </div>
-                                    <div class="text-col">
-                                        <h3>Anniversary</h3>
-                                    </div>
-                                </div>
-                            </div>   
-                            <div class="col-md-4 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="thumb">
-                                        <a href="#"><img src="images/013A0191_1.jpg" height="500px" alt=""></a>
-                                    </div>
-                                    <div class="text-col">
-                                        <h3>Baby Shower</h3>
-                                    </div>
-                                </div>
-                            </div>                           <!-- end col -->
-                        </div>
-                        <div class="row" style="margin-top: 20px">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="thumb">
-                                        <a href="#"><img src="images/d2.jpeg" height="500px" alt=""></a>
-                                    </div>
-                                    <div class="text-col">
-                                        <h3>Mahedi Ceremony</h3>
-                                                                          
-                                    </div>
-                                </div>
-                            </div>   
-                          <div class="col-md-4 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="thumb">
-                                        <a href="#"><img src="images/anniversary.jpg" height="500px" alt=""></a>
-                                    </div>
-                                    <div class="text-col">
-                                        <h3>Haldi Ceremony</h3>
-                                    </div>
-                                </div>
-                            </div>   
-                            <div class="col-md-4 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="thumb">
-                                        <a href="#"><img src="images/5625213.jpg" height="500px" alt=""></a>
-                                    </div>
-                                    <div class="text-col">
-                                        <h3>Baby Gender</h3>
-                                    </div>
-                                </div>
-                            </div>                           <!-- end col -->
-                        </div>
-                        <!-- end row -->
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo-circle">AKT</div>
+    <div class="nav-brand-text">
+      <span>AKT ENTERPRISE</span>
+      <small>A Composite Solutions</small>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#why">Why FRP</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
 
-         </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">🔥 Open to Opportunities</div>
+    <h1>Welcoming the Era of<br><span>Fibre-Reinforced Plastic</span></h1>
+    <p>AKT Enterprise delivers high-performance FRP/GRP composite solutions — the intelligent, corrosion-resistant alternative to metal for industrial, commercial, and structural applications.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Explore Products</a>
+      <a href="#contact" class="btn-outline">Get a Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Product Lines</span></div>
+      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Industries Served</span></div>
+      <div class="stat"><span class="stat-num">80+</span><span class="stat-label">Years Durability</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT FRP -->
+<section class="about-frp" id="about">
+  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80" alt="FRP/GRP Composite Material"/>
+  <div class="about-frp-text">
+    <h2>What is <span>FRP/GRP?</span></h2>
+    <div class="divider"></div>
+    <p>FRP stands for <strong style="color:#fff">Fiber Reinforced Polymer</strong> and GRP stands for <strong style="color:#fff">Glass Reinforced Polymer</strong>. It is a reinforced plastic material containing glass fibers in a resin matrix.</p>
+    <p>Fiberglass is light, durable, strong, impact resistant, corrosion resistant and has a moderate high strength-to-weight ratio. It can be made into various shapes and offers excellent thermal insulation properties.</p>
+    <p>The growing trend of replacing heavy metal components with lighter fiberglass composites is creating immense growth opportunities — and AKT Enterprise is at the forefront of this revolution.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div id="products">
+  <div class="sec-header">
+    <h2>Our <span>FRP/GRP Products</span></h2>
+    <div class="divider-center"></div>
+    <p>High-quality composite products manufactured using advanced pultrusion and moulding processes, suitable for the most demanding environments.</p>
+  </div>
+</div>
+<section class="products">
+  <div class="products-grid">
+
+    <!-- Structural Profiles -->
+    <div class="product-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="FRP Structural Profiles"/>
+      <div class="card-body">
+        <div class="card-tag">FRP / GRP</div>
+        <h3>Structural Profiles</h3>
+        <p>Manufactured with fixed cross-section structures by continuous pultrusion using fiberglass reinforcements and thermosetting resin. Available in C Channel, L-Angle, I-Beam, Box Pipe, Round Pipe, Flat Section, Kick Plate & Deck Panel.</p>
+        <ul class="card-features">
+          <li>High strength & light weight</li>
+          <li>Anti-corrosive & flame retardant</li>
+          <li>Electrical & thermal insulation</li>
+          <li>Maintenance free</li>
+        </ul>
+        <a href="#contact" class="btn-card">Get Quote →</a>
+      </div>
     </div>
 
-   
-
- 	<div id="our_team" class="team-main pad-top-100 pad-bottom-100 parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <h2 class="block-title text-center">
-						Hear From Our Happy Clients	
-					</h2>
-                        <p class="title-caption text-center"></p>
-                    </div>
-                    <div class="team-box">
-
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="text-col">
-                                        <h3>Bhoomi Patel</h3>
-                                        <p>Choosing Aarvee Ballons Decoration was the best decision we made for our daughter's birthday party. From the vibrant decorations to the thoughtful details, everything was simply magical. Our little one and her friends had an unforgettable time. Thank you for making her day so special!</p>
-                                         <ul class="team-social">
-                                            <i>(In Brampton, ON)</i>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-md-3 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="text-col">
-                                        <h3>Shreya Patel</h3>
-                                        <p>A Perfect decoration Ever!! Thank you so much for the wonderful decoration. Each and everything was perfectly setup. Entrance board with the decoration were speedchless, Thank you so much Aarvee Ballons Decoration for making my Baby shower perfectly decorative </p>
-                                         <ul class="team-social">
-                                            <i>(London, ON)</i>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-md-3 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="text-col">
-                                        <h3>Savan Patel</h3>
-                                        <p>Choosing Aarvee Ballons Decoration was the best decision we made for our daughter's birthday party. From the vibrant decorations to the thoughtful details, everything was simply magical. Our little one and her friends had an unforgettable time. Thank you for making her day so special!</p>
-                                         <ul class="team-social">
-                                            <i>(In Brampton, ON)</i>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-md-3 col-sm-6">
-                                <div class="sf-team">
-                                    <div class="text-col">
-                                        <h3>Vasu Patel</h3>
-                                        <p>Choosing  Aarvee Ballons Decoration for our birthday party balloons decoration was the best decision we made! Thank you, Aarvee Ballons Decoration, for making our birthday party unforgettable with your exceptional talent and professionalism. We can't wait to work with you again for our next event!"</p>
-                                         <ul class="team-social">
-                                            <i>(Windsor, ON)</i>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                         
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                    </div>
-                    <!-- end team-box -->
-
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+    <!-- Cable Trays -->
+    <div class="product-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="FRP Cable Trays"/>
+      <div class="card-body">
+        <div class="card-tag">FRP / GRP</div>
+        <h3>Cable Trays</h3>
+        <p>Pultrusion-manufactured cable trays ideal for water treatment facilities, chemical plants, offshore platforms and other corrosive environments. Available in pultruded and ladder types. Manufactured as per NEMA FGI-1993.</p>
+        <ul class="card-features">
+          <li>Corrosion & impact resistant</li>
+          <li>Non-conductive & UV resistant</li>
+          <li>Easy to cut, drill — no welding</li>
+          <li>Sizes from 50mm to 600mm width</li>
+        </ul>
+        <a href="#contact" class="btn-card">Get Quote →</a>
+      </div>
     </div>
 
-    <!-- end special-menu -->
-   <div id="about" class="about-main pad-top-100 pad-bottom-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <h2 class="block-title"> About Us </h2>
-                        
-                        <p> Welcome to <strong>Aarvee Balloons Decoration</strong>, where creativity meets celebration! We are a passionate team of balloon artists dedicated to turning ordinary events into extraordinary experiences. My name is <strong>Jinesh Patel</strong>, and I am the founder of this vibrant venture. </p>
-
-                        <p> Our journey began with a simple yet powerful idea: to bring joy and magic to every occasion through the art of balloon decoration. What started as a hobby soon blossomed into a full-fledged business fueled by our love for design and commitment to customer satisfaction. </p>
-
-                        <p> At <strong>Aarvee Balloons Decoration</strong>, we believe that balloons are not just inflatable decorations; they are symbols of happiness, excitement, and endless possibilities. Whether it's a birthday bash, a corporate event, a wedding celebration, or any special occasion in between, we are here to elevate your moments with our bespoke balloon design </p>
-
-                        <p>Thank you for considering <strong>Aarvee Balloons Decoration</strong> to be a part of your special moments. We look forward to adding a touch of magic to your next event and creating memories that will last a lifetime.</p>
-
-                        <h3>Let's celebrate together!</h3>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <div class="about-images">
-                            <img class="about-main" src="images/about-main.JPG" height="500px" alt="About Main Image">
-                           <!--  <img class="about-inset" src="images/about-inset.jpg" alt="About Inset Image"> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+    <!-- Rebar -->
+    <div class="product-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=600&q=80" alt="FRP Rebar"/>
+      <div class="card-body">
+        <div class="card-tag">FRP / GRP</div>
+        <h3>Rebar</h3>
+        <p>A spiral-wrapped structural reinforcing rod made from fiberglass roving and resin. A non-corrosive alternative to steel for concrete reinforcement, suitable for any structural or architectural application requiring corrosion resistance or non-conductivity.</p>
+        <ul class="card-features">
+          <li>Twice stronger than steel rebar</li>
+          <li>Only 1/4th the weight of steel</li>
+          <li>100+ year life span</li>
+          <li>Non-magnetic — ideal for MRI rooms</li>
+        </ul>
+        <a href="#contact" class="btn-card">Get Quote →</a>
+      </div>
     </div>
-   
-    <!-- end menu -->
 
-   
-    <!-- end team-main -->
-
-    <div id="gallery" class="gallery-main pad-top-100 pad-bottom-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <h2 class="block-title text-center">
-						Our Gallery	
-					</h2>
-                        <p class="title-caption text-center"></p>
-                    </div>
-                    <div class="gal-container clearfix">
-                        <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#1">
-                                    <img src="images/gallery1.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="1" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery1.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 1 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#2">
-                                    <img src="images/gallery2.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="2" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery2.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 2 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#3">
-                                    <img src="images/gallery3.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="3" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery3.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 3 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#4">
-                                    <img src="images/gallery4.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="4" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery4.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 4 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#5">
-                                    <img src="images/gallery5.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="5" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery5.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 5 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#9">
-                                    <img src="images/gallery6.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="9" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery6.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 6 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#10">
-                                    <img src="images/gallery7.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="10" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery7.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 7 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#11">
-                                    <img src="images/gallery8.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="11" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery8.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 8 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#12">
-                                    <img src="images/gallery9.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="12" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery9.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 9 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                            <div class="box">
-                                <a href="#" data-toggle="modal" data-target="#13">
-                                    <img src="images/gallery10.JPG" alt="" />
-                                </a>
-                                <div class="modal fade" id="13" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <div class="modal-body">
-                                                <img src="images/gallery10.JPG" alt="" />
-                                            </div>
-                                            <div class="col-md-12 description">
-                                                <h4>This is the 10 one on my Gallery</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end gal-container -->
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+    <!-- Fencing -->
+    <div class="product-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="FRP Fencing"/>
+      <div class="card-body">
+        <div class="card-tag">FRP / GRP</div>
+        <h3>Fencing</h3>
+        <p>A complete safety solution for residential areas and industries. Used for protection and isolation with rapid installation capability. Available as Boundary Fencing, Moulded Grating Fencing, Pultruded Grating Fencing, Transformer Fencing and FRP Railings.</p>
+        <ul class="card-features">
+          <li>Easy & rapid installation</li>
+          <li>Anti-corrosive & cost-effective</li>
+          <li>Multiple fencing types available</li>
+          <li>Color customizable</li>
+        </ul>
+        <a href="#contact" class="btn-card">Get Quote →</a>
+      </div>
     </div>
-    <!-- end gallery-main -->
 
-   
-    <!-- end blog-main -->
-
-        <div class="special-menu pad-top-100 parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <h2 class="block-title color-white text-center"> Our Works </h2>
-                        <h5 class="title-caption text-center">  </h5>
-                    </div>
-                    <div class="special-box">
-                        <div id="owl-demo">
-                            <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    
-                                </a>
-                                <div class="item-img">
-                                    <img src="images/IMG_4007.JPG" alt="sp-menu">
-                                </div>
-                            </div>
-                            <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    
-                                </a>
-                                <div class="item-img">
-                                    <img src="images/IMG_4008.JPG" alt="sp-menu">
-                                </div>
-                            </div>
-                            <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                   
-                                </a>
-                                <div class="item-img">
-                                    <img src="images/IMG_4010.JPG" alt="sp-menu">
-                                </div>
-                            </div>
-                            <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    
-                                </a>
-                                <div class="item-img">
-                                    <img src="images/IMG_4012.JPG" alt="sp-menu">
-                                </div>
-                            </div>
-                            <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    
-                                </a>
-                                <div class="item-img">
-                                    <img src="images/IMG_4011.JPG" alt="sp-menu">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end special-box -->
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+    <!-- Handrail -->
+    <div class="product-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?w=600&q=80" alt="FRP Handrail"/>
+      <div class="card-body">
+        <div class="card-tag">FRP / GRP</div>
+        <h3>Handrail</h3>
+        <p>Composite glass fiber and resin handrail systems — a superior substitute for steel and wood. Ideal for outdoor handrails, guardrails, floors, industrial platforms, walkways, staircases, petroleum platforms, highways, coastal areas and more.</p>
+        <ul class="card-features">
+          <li>Material: ECR Glass + Resin (ORTHO, ISO, VE, PHENOLIC)</li>
+          <li>Corrosion resistant & long life</li>
+          <li>Size & color customizable (RAL)</li>
+          <li>High fiber content & strength</li>
+        </ul>
+        <a href="#contact" class="btn-card">Get Quote →</a>
+      </div>
     </div>
-    <!-- end pricing-main -->
 
-    <div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
-        <div class="container">
-            <div class="row">
-                <div class="form-reservations-box">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                            <h2 class="block-title text-center">
-						Inquery			
-					</h2>
-                        </div>
-                        <h4 class="form-title">Inquery FORM</h4>
-                        <p>PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS!</p>
-
-                        <form id="contact-form" method="post" class="reservations-box" name="contactform" action="mail.php">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <input type="text" name="form_name" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <input type="email" name="email" id="email" placeholder="E-Mail ID" required="required" data-error="E-mail id is required.">
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <input type="text" name="phone" id="phone" placeholder="contact no.">
-                                </div>
-                            </div>
-                            <!-- end col -->
-                           
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <input type="text" name="date-picker" id="date-picker" placeholder="Date" required="required" data-error="Date is required." />
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <input type="text" name="time-picker" id="time-picker" placeholder="Time" required="required" data-error="Time is required." />
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <select name="occasion" id="occasion" class="selectpicker">
-                                        <option selected disabled>Occasion</option>
-                                        <option>Wedding</option>
-                                        <option>Birthday</option>
-                                        <option>Anniversary</option>
-                                        <option>Baby Shower</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="reserve-book-btn text-center">
-                                    <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit">Send Inquery </button>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                        </form>
-                        <!-- end form -->
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end reservations-box -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+    <!-- Canopy -->
+    <div class="product-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&q=80" alt="FRP Canopy"/>
+      <div class="card-body">
+        <div class="card-tag">FRP / GRP</div>
+        <h3>Canopy</h3>
+        <p>Protective coverings made from composite polymer matrix — widely used in various industries to shield equipment, instruments and electrical components from environmental elements. Available as Machine Molded and Hand Molded canopies in Box, Open, Enclosed and Cylindrical types.</p>
+        <ul class="card-features">
+          <li>Lightweight yet very strong</li>
+          <li>Weather & UV resistant</li>
+          <li>Instrumentation & junction box types</li>
+          <li>Custom dimensions available</li>
+        </ul>
+        <a href="#contact" class="btn-card">Get Quote →</a>
+      </div>
     </div>
-    <!-- end reservations-main -->
 
-     <div id="footer" class="footer-main">
-        
-        <!-- end footer-news -->
-        <div class="footer-box pad-top-70">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-in-main">
-                       
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        	 <div class="footer-logo">
-                            <div class="text-center">
-                                <img src="images/logo.png" width="200px" alt="" />
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-box-a">
-                                <h3>About Us</h3>
-                                <p>Your Suggestions Our Efforts</p>
-                                <ul class="socials-box footer-socials pull-left">
-                                    <li>
-                                        <a href="https://www.facebook.com/aarveeballoondecoration/">
-                                            <div class="social-circle-border"><i class="fa  fa-facebook"></i></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/aarvee_balloons_decorations_/">
-                                            <div class="social-circle-border"><i class="fa fa-instagram"></i></div>
-                                        </a>
-                                    </li>
-                                    
-                                </ul>
+  </div>
+</section>
 
-                            </div>
-                            <!-- end footer-box-a -->
-                        </div>
-                        <!-- end col -->
-                       
-                        <!-- end col -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-box-c">
-                                <h3>Contact Us</h3>
-                                <p>
-                                    <i class="fa fa-map-signs" aria-hidden="true"></i>
-                                    <span>614-400 LYLE ST LONDON, ON, CANADA</span>
-                                </p>
-                                <p>
-                                    <i class="fa fa-mobile" aria-hidden="true"></i>
-                                    <span>
-									+1(437) 986-1552
-								</span>
-                                </p>
-                                <p>
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <span><a href="#">support@aarveeballoonsdecoration.com</a></span>
-                                </p>
-                            </div>
-                            <!-- end footer-box-c -->
-                        </div>
-                        <!-- end col -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="footer-box-d">
-                                
-                            </div>
-                            <!-- end footer-box-d -->
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end footer-in-main -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-            <div id="copyright" class="copyright-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h6 class="copy-title"> Copyright &copy; 2024 Aarvee Balloons Decoration <a href="https://www.linkedin.com/in/nimesh-patel-376b82111/" target="_blank">Design By : Nimesh Patel</a> </h6>
-                        </div>
-                    </div>
-                    <!-- end row -->
-                </div>
-                <!-- end container -->
-            </div>
-            <!-- end copyright-main -->
-        </div>
-        <!-- end footer-box -->
+<!-- INDUSTRIES -->
+<section class="industries" id="industries">
+  <h2>Multi-Dimensional <span>Usage</span></h2>
+  <div class="divider-center"></div>
+  <div class="ind-grid">
+    <div class="ind-item"><div class="ind-icon">🛢️</div><span>Oil & Gas</span></div>
+    <div class="ind-item"><div class="ind-icon">🏛️</div><span>Architectural</span></div>
+    <div class="ind-item"><div class="ind-icon">⚗️</div><span>Chemicals</span></div>
+    <div class="ind-item"><div class="ind-icon">🏗️</div><span>Infrastructure</span></div>
+    <div class="ind-item"><div class="ind-icon">💊</div><span>Pharmaceuticals</span></div>
+    <div class="ind-item"><div class="ind-icon">🌡️</div><span>Cooling Tower</span></div>
+    <div class="ind-item"><div class="ind-icon">⚡</div><span>Electrical & Utility</span></div>
+    <div class="ind-item"><div class="ind-icon">🪜</div><span>Ladder & Handrailing</span></div>
+    <div class="ind-item"><div class="ind-icon">🚢</div><span>Marine Industry</span></div>
+    <div class="ind-item"><div class="ind-icon">🏠</div><span>Domestic Use</span></div>
+    <div class="ind-item"><div class="ind-icon">📦</div><span>Cable Tray System</span></div>
+    <div class="ind-item"><div class="ind-icon">🔌</div><span>Electrical</span></div>
+  </div>
+</section>
+
+<!-- WHY FRP -->
+<section class="why-frp" id="why">
+  <div class="sec-header" style="padding-top:0;">
+    <h2>Why Choose <span>FRP/GRP?</span></h2>
+    <div class="divider-center"></div>
+    <p>FRP composites outperform conventional metals across every critical performance parameter.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><h4>🛡️ Corrosion Resistant</h4><p>Withstands all types of chemical attacks, making it ideal for aggressive industrial environments.</p></div>
+    <div class="why-card"><h4>⚖️ Lightweight</h4><p>Up to 4× lighter than steel, reducing handling, transport and installation costs significantly.</p></div>
+    <div class="why-card"><h4>💪 High Strength</h4><p>Tensile strength up to 1200 MPa — far exceeding steel's 390 MPa performance.</p></div>
+    <div class="why-card"><h4>🔌 Non-Conductive</h4><p>Electrically and thermally non-conductive — safe for electrical utilities and insulation applications.</p></div>
+    <div class="why-card"><h4>🔧 Maintenance Free</h4><p>No painting, coating or cleaning required — dramatically reducing lifecycle costs.</p></div>
+    <div class="why-card"><h4>♻️ Long Life</h4><p>Predicted durability of 80–100+ years, delivering the lowest lifecycle cost of any structural material.</p></div>
+    <div class="why-card"><h4>☀️ UV Resistant</h4><p>Built-in UV resistance protects against direct sunlight exposure without degradation.</p></div>
+    <div class="why-card"><h4>🎨 Customizable</h4><p>Available in custom sizes, shapes and colors as per RAL — tailored to your exact project needs.</p></div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="vm">
+  <div class="vm-box">
+    <div class="vm-label">Our Vision</div>
+    <h3>Explore the Unexplored</h3>
+    <p>"To explore the unexplored opportunities and revolutionize the future with FRP application."</p>
+  </div>
+  <div class="vm-box mission">
+    <div class="vm-label">Our Mission</div>
+    <h3 style="color:#fff">Most Prominent Source</h3>
+    <p>"Become the most prominent source of structural foundation as an alternative to metal — establishing and running an innovation-driven company to bring transformation in the sector."</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Get In <span>Touch</span></h2>
+  <div class="divider-center"></div>
+  <p>Ready to explore FRP/GRP solutions for your project? Reach out to our team today.</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="cc-icon">📍</div>
+      <h4>Address</h4>
+      <p>Plot No-518/B, Zone-F F/8<br>Road No-B/20 GIDC<br>VU Nagar, Gujarat – 388321</p>
     </div>
-    <!-- end footer-main -->
+    <div class="contact-card">
+      <div class="cc-icon">📞</div>
+      <h4>Phone</h4>
+      <p>+91 9586665072<br>+91 97144 99031</p>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon">✉️</div>
+      <h4>Email</h4>
+      <p>AKT.enterprise1973@gmail.com<br>aktenterprise@zohomail.in</p>
+    </div>
+  </div>
+  <a href="mailto:AKT.enterprise1973@gmail.com" class="btn-primary">Send Enquiry →</a>
+</section>
 
-    <a href="#" class="scrollup" style="display: none;">Scroll</a>
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>AKT Enterprise</span> — A Composite Solutions. All rights reserved.</p>
+  <p style="color:#4a6080;font-size:.8rem;">Plot No-518/B, GIDC VU Nagar, Gujarat</p>
+</footer>
 
-    
-
-    <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
 </body>
-
 </html>
