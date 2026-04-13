@@ -62,8 +62,27 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .sec-header h2 span{color:var(--orange);}
 .sec-header p{color:#6b7d96;max-width:580px;margin:0 auto;line-height:1.7;}
 .divider-center{width:60px;height:3px;background:var(--orange);margin:14px auto 18px;}
+.tab-btn{background:var(--light);color:var(--navy);border:2px solid #dde3ed;padding:10px 22px;border-radius:5px;font-weight:700;font-size:.88rem;cursor:pointer;transition:.2s;}
+.tab-btn:hover{border-color:var(--orange);color:var(--orange);}
+.tab-active{background:var(--orange);color:#fff;border-color:var(--orange);}
+.spec-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+.spec-table thead tr{background:var(--navy);color:#fff;}
+.spec-table th{padding:12px 16px;text-align:left;font-weight:700;letter-spacing:.4px;}
+.spec-table td{padding:10px 16px;border-bottom:1px solid #e8ecf2;color:var(--text);}
+.spec-table tbody tr:nth-child(even){background:#f8fafc;}
+.spec-table tbody tr:hover{background:rgba(244,129,63,.07);}
+.acc-card{background:var(--light);border:2px solid #dde3ed;border-radius:8px;padding:16px 24px;font-size:.9rem;font-weight:600;color:var(--navy);text-align:center;transition:.2s;}
+.acc-card:hover{border-color:var(--orange);color:var(--orange);}
+.profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.profile-card{background:#fff;border:2px solid #e8ecf2;border-radius:10px;padding:22px 18px;text-align:center;transition:.25s;box-shadow:0 2px 10px rgba(10,31,68,.05);}
+.profile-card:hover{border-color:var(--orange);transform:translateY(-4px);box-shadow:0 8px 24px rgba(10,31,68,.12);}
+.profile-icon{height:70px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.profile-card h4{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:7px;}
+.profile-card p{font-size:.82rem;color:#6b7d96;line-height:1.6;}
+.feat-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#c5d8f0;font-size:.8rem;font-weight:600;padding:5px 14px;border-radius:20px;}
 
 /* PRODUCTS */
+
 .products{background:var(--light);padding:0 5% 80px;}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;}
 .product-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 18px rgba(10,31,68,.08);transition:.3s;border-top:4px solid var(--orange);}
@@ -79,6 +98,7 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .card-features li::before{content:'✦';position:absolute;left:0;color:var(--orange);font-size:9px;top:5px;}
 .btn-card{display:inline-block;background:var(--navy);color:#fff;padding:9px 22px;border-radius:4px;font-size:.85rem;font-weight:700;letter-spacing:.5px;transition:.2s;}
 .btn-card:hover{background:var(--orange);}
+
 
 /* INDUSTRIES */
 .industries{background:var(--navy);padding:70px 5%;}
@@ -263,7 +283,7 @@ footer span{color:var(--orange);font-weight:700;}
         <a href="#contact" class="btn-card">Get Quote →</a>
       </div>
     </div>
-
+	
     <!-- Handrail -->
     <div class="product-card">
       <img class="card-img" src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?w=600&q=80" alt="FRP Handrail"/>
@@ -298,7 +318,270 @@ footer span{color:var(--orange);font-weight:700;}
       </div>
     </div>
 
+
+
+    <!-- Cable Tray Specs (full section, inserted after cable tray card) -->
+  </div><!-- end products-grid -->
+
+      <!-- Structural Profiles Detailed Section -->
+    <div style="margin-top:60px;">
+      <h2 style="text-align:center;font-size:1.9rem;font-weight:900;color:var(--navy);margin-bottom:8px;">FRP/GRP Structural <span style="color:var(--orange)">Profile Types</span></h2>
+      <div class="divider-center"></div>
+      <p style="text-align:center;color:#6b7d96;max-width:640px;margin:0 auto 32px;font-size:.93rem;">All cross-section profiles can be pultruded &amp; customized using Polyester, ISO or Vinyl ester resin systems with different forms of fiberglass reinforcements.</p>
+
+      <div class="profile-grid">
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <rect x="8" y="10" width="12" height="40" fill="#f4813f"/>
+              <rect x="8" y="10" width="50" height="12" fill="#f4813f"/>
+              <rect x="8" y="38" width="50" height="12" fill="#f4813f"/>
+            </svg>
+          </div>
+          <h4>C Channel</h4>
+          <p>Structural channel section used for framing, supports and brackets in industrial applications.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <rect x="15" y="10" width="50" height="40" fill="none" stroke="#f4813f" stroke-width="8"/>
+            </svg>
+          </div>
+          <h4>Box Pipe</h4>
+          <p>Hollow square/rectangular section offering excellent torsional rigidity for structural frameworks.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <rect x="8" y="8" width="64" height="10" fill="#f4813f"/>
+              <rect x="8" y="42" width="64" height="10" fill="#f4813f"/>
+              <rect x="34" y="8" width="12" height="44" fill="#f4813f"/>
+            </svg>
+          </div>
+          <h4>I-Beam</h4>
+          <p>Classic I-section beam for load-bearing structures, walkways and mezzanine platforms.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <polygon points="10,50 10,10 22,10 22,38 70,38 70,50" fill="#f4813f"/>
+            </svg>
+          </div>
+          <h4>L-Angle</h4>
+          <p>Equal and unequal angle sections used for corner joints, supports and edge protection.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <circle cx="40" cy="30" r="22" fill="none" stroke="#f4813f" stroke-width="8"/>
+            </svg>
+          </div>
+          <h4>Round Pipe</h4>
+          <p>Circular hollow section ideal for handrail systems, conduit runs and structural columns.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <circle cx="40" cy="30" r="18" fill="#f4813f"/>
+            </svg>
+          </div>
+          <h4>Polyester Rod</h4>
+          <p>Solid round rod used for rebar, insulating pins, spacers and specialty structural applications.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <rect x="10" y="22" width="60" height="16" fill="#f4813f" rx="2"/>
+            </svg>
+          </div>
+          <h4>Flat Section</h4>
+          <p>Flat bar sections used for grating supports, stiffeners, kick plates and cladding applications.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <rect x="10" y="8" width="60" height="10" fill="#f4813f"/>
+              <rect x="10" y="42" width="60" height="10" fill="#0a1f44" opacity=".5"/>
+              <rect x="10" y="18" width="60" height="8" fill="#f4813f" opacity=".6"/>
+              <rect x="10" y="26" width="60" height="8" fill="#f4813f" opacity=".4"/>
+              <rect x="10" y="34" width="60" height="8" fill="#f4813f" opacity=".3"/>
+            </svg>
+          </div>
+          <h4>Deck Panel</h4>
+          <p>Structural deck panels for flooring, roofing and walkway decking in corrosive environments.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <svg viewBox="0 0 80 60" width="72" height="54">
+              <rect x="10" y="38" width="60" height="14" fill="#f4813f"/>
+              <polygon points="10,38 40,8 70,38" fill="#f4813f" opacity=".5"/>
+            </svg>
+          </div>
+          <h4>Kick Plate</h4>
+          <p>Protective plates installed at the base of walkways, platforms and stairways for foot-level safety.</p>
+        </div>
+
+      </div>
+
+      <!-- Features strip -->
+      <div style="background:var(--navy);border-radius:10px;padding:28px 32px;margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;align-items:center;">
+        <span style="color:var(--orange);font-weight:800;font-size:.95rem;letter-spacing:.5px;">Key Features:</span>
+        <span class="feat-pill">High Strength</span>
+        <span class="feat-pill">Light Weight</span>
+        <span class="feat-pill">Anti-Corrosive</span>
+        <span class="feat-pill">Electrical Insulation</span>
+        <span class="feat-pill">Thermal Insulation</span>
+        <span class="feat-pill">Flame Retardant</span>
+        <span class="feat-pill">EM Transparency</span>
+        <span class="feat-pill">Low Thermal Expansion</span>
+        <span class="feat-pill">Maintenance Free</span>
+      </div>
+    </div>
+
+    <!-- Cable Tray Detailed Tables -->
+  <div style="margin-top:60px;">
+    <h2 style="text-align:center;font-size:1.9rem;font-weight:900;color:var(--navy);margin-bottom:8px;">FRP/GRP Cable Tray <span style="color:var(--orange)">Specifications</span></h2>
+    <div class="divider-center"></div>
+
+    <!-- Tabs -->
+    <div style="display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
+      <button onclick="showTab('pultruted')" id="tab-pultruted" class="tab-btn tab-active">Pultruded Cable Tray</button>
+      <button onclick="showTab('ladder')" id="tab-ladder" class="tab-btn">Ladder Cable Tray</button>
+      <button onclick="showTab('specs')" id="tab-specs" class="tab-btn">Specifications</button>
+      <button onclick="showTab('accessories')" id="tab-accessories" class="tab-btn">Accessories</button>
+    </div>
+
+    <!-- Pultruded Table -->
+    <div id="tab-pultruted-content" class="tab-content">
+      <p style="text-align:center;color:#6b7d96;margin-bottom:20px;font-size:.93rem;">Manufactured by pultrusion process — high quality, affordable & resistant to all chemical assaults.</p>
+      <div style="overflow-x:auto;">
+        <table class="spec-table">
+          <thead><tr><th>Cable Tray Sizes (W×H×T)</th><th>Cover Sizes (W×H×T)</th></tr></thead>
+          <tbody>
+            <tr><td>50 × 25 × 3</td><td rowspan="2">56 × 15 × 3</td></tr>
+            <tr><td>50 × 30 × 3</td></tr>
+            <tr><td>75 × 25 × 5</td><td rowspan="3">81 × 15 × 3</td></tr>
+            <tr><td>75 × 50 × 3</td></tr>
+            <tr><td>75 × 50 × 4</td></tr>
+            <tr><td>100 × 30 × 4</td><td rowspan="8">106 × 28 × 3</td></tr>
+            <tr><td>100 × 30 × 5</td></tr>
+            <tr><td>100 × 30 × 6</td></tr>
+            <tr><td>100 × 50 × 3</td></tr>
+            <tr><td>100 × 50 × 4</td></tr>
+            <tr><td>100 × 50 × 5</td></tr>
+            <tr><td>100 × 75 × 3</td></tr>
+            <tr><td>150 × 50 × 3</td></tr>
+            <tr><td>150 × 50 × 4</td><td rowspan="3">156 × 28 × 3</td></tr>
+            <tr><td>150 × 50 × 5</td></tr>
+            <tr><td>206 × 30 × 4</td></tr>
+            <tr><td>200 × 50 × 4</td><td rowspan="2">206 × 28 × 4</td></tr>
+            <tr><td>200 × 50 × 5</td></tr>
+            <tr><td>300 × 50 × 4</td><td rowspan="2">306 × 28 × 4</td></tr>
+            <tr><td>300 × 50 × 5</td></tr>
+            <tr><td>450 × 100 × 30F × 4</td><td>450 × 3</td></tr>
+            <tr><td>600 × 100 × 30F × 4</td><td>600 × 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px;font-size:.82rem;color:#999;text-align:center;font-style:italic;">Accessories: Bends, Cover Clamps, Bolts, Coupler & other accessories also available with perforated cable trays.</p>
+    </div>
+
+    <!-- Ladder Table -->
+    <div id="tab-ladder-content" class="tab-content" style="display:none;">
+      <p style="text-align:center;color:#6b7d96;margin-bottom:20px;font-size:.93rem;">Two longitudinal side rails connected by rungs at regular intervals — solid or perforated bottom with integrated or separate longitudinal side rails.</p>
+      <div style="overflow-x:auto;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <table class="spec-table">
+            <thead><tr><th colspan="1">Cable Tray Sizes (W×H×F×T)</th></tr></thead>
+            <tbody>
+              <tr><td>150 × 75 × 25 × 3</td></tr><tr><td>150 × 75 × 50F × 3</td></tr>
+              <tr><td>150 × 75 × 50F × 4</td></tr><tr><td>150 × 100 × 30F × 4</td></tr>
+              <tr><td>200 × 75 × 25F × 3</td></tr><tr><td>200 × 75 × 50F × 3</td></tr>
+              <tr><td>200 × 75 × 50F × 4</td></tr><tr><td>200 × 100 × 30F × 4</td></tr>
+              <tr><td>300 × 75 × 25F × 3</td></tr><tr><td>300 × 75 × 50F × 3</td></tr>
+              <tr><td>300 × 75 × 50F × 4</td></tr><tr><td>300 × 100 × 30F × 4</td></tr>
+              <tr><td>400 × 75 × 25F × 3</td></tr><tr><td>400 × 75 × 50F × 3</td></tr>
+            </tbody>
+          </table>
+          <table class="spec-table">
+            <thead><tr><th colspan="1">Cable Tray Sizes (W×H×F×T)</th></tr></thead>
+            <tbody>
+              <tr><td>400 × 75 × 50F × 4</td></tr><tr><td>400 × 100 × 30F × 4</td></tr>
+              <tr><td>450 × 75 × 25F × 3</td></tr><tr><td>450 × 75 × 50F × 3</td></tr>
+              <tr><td>450 × 75 × 50F × 4</td></tr><tr><td>450 × 100 × 30F × 4</td></tr>
+              <tr><td>500 × 75 × 25F × 3</td></tr><tr><td>500 × 75 × 50F × 3</td></tr>
+              <tr><td>500 × 75 × 50F × 4</td></tr><tr><td>500 × 100 × 30F × 4</td></tr>
+              <tr><td>600 × 75 × 25F × 3</td></tr><tr><td>600 × 75 × 50F × 3</td></tr>
+              <tr><td>600 × 75 × 50F × 4</td></tr><tr><td>600 × 100 × 30F × 4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p style="margin-top:12px;font-size:.82rem;color:#999;text-align:center;font-style:italic;">Note: FRP Cable Trays are manufactured as per NEMA FGI – 1993</p>
+    </div>
+
+    <!-- Specifications Table -->
+    <div id="tab-specs-content" class="tab-content" style="display:none;">
+      <div style="overflow-x:auto;">
+        <table class="spec-table">
+          <thead><tr><th>Particulars</th><th>FRP Pultruded Cable Tray</th><th>FRP Ladder Cable Tray</th></tr></thead>
+          <tbody>
+            <tr><td>Resin</td><td>Polyester – Isophthalic – Vinylester</td><td>Polyester – Isophthalic – Vinylester</td></tr>
+            <tr><td>Glass</td><td>ECR Boron Free Grade</td><td>ECR Boron Free Grade</td></tr>
+            <tr><td>Length</td><td>3 – 6 Meters</td><td>3 Meters</td></tr>
+            <tr><td>Width</td><td>50 – 600 mm</td><td>150 – 12000 mm</td></tr>
+            <tr><td>Rung Construction</td><td>NA</td><td>FRP Square Tube</td></tr>
+            <tr><td>Rung Spacing</td><td>NA</td><td>300 mm</td></tr>
+            <tr><td>Coupler Plates</td><td>GRP/FRP with SS Bolts</td><td>GRP/FRP with SS Bolts</td></tr>
+            <tr><td>Angle of Bends</td><td>90° – 45°</td><td>90° – 45°</td></tr>
+            <tr><td>Radius of Bends</td><td>300, 450, 600 mm</td><td>300, 450, 600 mm</td></tr>
+            <tr><td>Fire Retardant</td><td>As Per IS 6746</td><td>As Per IS 6746</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Accessories -->
+    <div id="tab-accessories-content" class="tab-content" style="display:none;">
+      <p style="text-align:center;color:#6b7d96;margin-bottom:24px;font-size:.93rem;">Full range of cable tray accessories available for complete installation systems.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+        <div class="acc-card">🔀 Tee Bend</div>
+        <div class="acc-card">↩️ 90° Horizontal Bend</div>
+        <div class="acc-card">⬇️ 90° Inside Vertical Bend</div>
+        <div class="acc-card">⬆️ 90° Outside Vertical Bend</div>
+        <div class="acc-card">🔧 Reducer</div>
+        <div class="acc-card">🔩 Cover Clamps</div>
+        <div class="acc-card">⚙️ Bolts & Couplers</div>
+        <div class="acc-card">📐 Perforated Trays</div>
+      </div>
+      <div style="background:var(--light);border-left:4px solid var(--orange);padding:18px 22px;border-radius:6px;margin-top:28px;max-width:600px;margin-left:auto;margin-right:auto;">
+        <h4 style="color:var(--navy);font-weight:800;margin-bottom:6px;">10 Benefits of FRP Cable Tray</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin-top:10px;">
+          <span style="font-size:.85rem;color:#444;">✦ Corrosion Resistant</span>
+          <span style="font-size:.85rem;color:#444;">✦ Light Weight</span>
+          <span style="font-size:.85rem;color:#444;">✦ Impact Resistant</span>
+          <span style="font-size:.85rem;color:#444;">✦ Non-Conductive</span>
+          <span style="font-size:.85rem;color:#444;">✦ Dimensional Stability</span>
+          <span style="font-size:.85rem;color:#444;">✦ Maintenance-Free</span>
+          <span style="font-size:.85rem;color:#444;">✦ Long Life Cycle</span>
+          <span style="font-size:.85rem;color:#444;">✦ Easy to Install</span>
+          <span style="font-size:.85rem;color:#444;">✦ UV Resistant</span>
+          <span style="font-size:.85rem;color:#444;">✦ Low Installation Cost</span>
+        </div>
+      </div>
+    </div>
   </div>
+
+
 </section>
 
 <!-- INDUSTRIES -->
@@ -385,5 +668,13 @@ footer span{color:var(--orange);font-weight:700;}
   <p style="color:#4a6080;font-size:.8rem;">Plot No-518/B, GIDC VU Nagar, Gujarat</p>
 </footer>
 
+<script>
+function showTab(name){
+  document.querySelectorAll('.tab-content').forEach(el=>el.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('tab-active'));
+  document.getElementById('tab-'+name+'-content').style.display='block';
+  document.getElementById('tab-'+name).classList.add('tab-active');
+}
+</script>
 </body>
 </html>
